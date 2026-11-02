@@ -1,10 +1,9 @@
 public class LatihanClass {
     public static void main(String[] args) {
-        Mahasiswa m1 = new Mahasiswa("Alpha", "10078", 3.90);
+        Mahasiswa m1 = new Mahasiswa("Alpha", "10078", 3.5);
 
-        m1.ipk = 9.9; // seharusnya TIDAK MASUK AKAL, IPK maksimal 4.0
-        m1.nim = "";  // NIM kosong, seharusnya tidak valid
-
-        System.out.println(m1.ipk);
+        System.out.println("Nama: " + m1.GetNama());
+        System.out.println("Nim: " + m1.GetNim());
+        System.out.println("IPK: " + m1.GetIpk());
     }
 }
