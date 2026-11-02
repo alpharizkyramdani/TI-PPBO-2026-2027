@@ -1,33 +1,50 @@
 public class Produk {
-    String kodeProduk;
-    String namaProduk;
-    double harga;
-    int stok;
+    private String nama;
+    private double harga;
+    private int stok;
 
-    public Produk(String kodeProduk, String namaProduk, double harga, int stok) {
-        this.kodeProduk = kodeProduk;
-        this.namaProduk = namaProduk;
-        this.harga = harga;
-        this.stok = stok;
+    public Produk(String nama, double harga, int stok) {
+        this.nama = nama;
+        setHarga(harga);
+        setStok(stok);
     }
 
-    public double hitungTotalHarga(int jumlahBeli) {
-        return harga * jumlahBeli;
+    public String getNama() {
+        return nama;
     }
 
-    public void kurangiStok(int jumlah) {
-        if (jumlah <= stok) {
-            stok -= jumlah;
-            System.out.println("Stok berhasil dikurangi sebanyak " + jumlah + " unit.");
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public double getHarga() {
+        return harga;
+    }
+
+    public void setHarga(double harga) {
+        if (harga >= 0) {
+            this.harga = harga;
         } else {
-            System.out.println("Stok tidak mencukupi");
+            System.out.println("Harga tidak valid! Harga tidak boleh negatif.");
+        }
+    }
+
+
+    public int getStok() {
+        return stok;
+    }
+
+    public void setStok(int stok) {
+        if (stok >= 0) {
+            this.stok = stok;
+        } else {
+            System.out.println("Stok tidak valid! Stok tidak boleh negatif.");
         }
     }
 
     public void tampilkanData() {
-        System.out.println("Kode Produk : " + kodeProduk);
-        System.out.println("Nama Produk : " + namaProduk);
-        System.out.printf("Harga       : Rp%.0f%n", harga);
+        System.out.println("Nama Produk : " + nama);
+        System.out.println("Harga       : Rp" + harga);
         System.out.println("Stok        : " + stok);
     }
 }
