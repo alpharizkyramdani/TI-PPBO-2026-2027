@@ -3,15 +3,15 @@ public class Mahasiswa {
     private String nim;
     private double ipk;
 
-    public String GetNama() {
+    public String getNama() {
         return nama;
     }
 
-    public String GetNim() {
+    public String getNim() {
         return nim;
     }
 
-    public double GetIpk() {
+    public double getIpk() {
         return ipk;
     }
 
@@ -23,7 +23,7 @@ public class Mahasiswa {
 
     public void setIpk(double ipk) {
         if (ipk >= 0.0 && ipk <= 4.0) {
-            this.ipk = ipk;;
+            this.ipk = ipk;
         } else {
             System.out.println("IPK tidak valid! Harus 0.0 - 4.0.");
         }
