@@ -1,9 +1,20 @@
 public class BangunDatarDemo {
     public static void main(String[] args) {
-        Lingkaran l = new Lingkaran(7);
-        Persegi p = new Persegi(5);
+        BangunDatar[] daftarBangun = {
+                new Lingkaran(7),
+                new Persegi(5),
+                new Lingkaran(10),
+                new Persegi(4)
+        };
 
-        System.out.println("Luas Lingkaran: " + l.hitungLuas());
-        System.out.println("Luas Persegi  : " + p.hitungLuas());
+       double totalLuas = 0;
+
+       for (BangunDatar bd : daftarBangun) {
+           double luas = bd.hitungLuas();
+           System.out.println("Luas bangun: " + luas );
+           totalLuas += luas;
+       }
+
+       System.out.println("Total Luas Seluruh Bangun: " + totalLuas);
     }
 }
