@@ -5,3 +5,4 @@ public class PenggajianDemo {
         System.out.println("Gaji Direktur " + dir.nama + ": " + dir.hitungGaji());
     }
 }
+
