@@ -1,0 +1,16 @@
+public class AkunPremium extends Akun {
+    private double batasKredit;
+
+    public AkunPremium(String username, double saldo, double batasKredit) {
+        super(username, saldo);
+        this.batasKredit = batasKredit;
+    }
+
+    public void cekLimit() {
+        System.out.println("=== INFORMASI AKUN PREMIUM ===");
+        System.out.println("Username: " + username);
+        System.out.println("Saldo: Rp" + saldo);
+        System.out.println("Batas Kredit: Rp" + batasKredit);
+        System.out.println("Total Limit: Rp" + (saldo + batasKredit));
+    }
+}
