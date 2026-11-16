@@ -1,20 +1,29 @@
 public class BangunDatarDemo {
     public static void main(String[] args) {
         BangunDatar[] daftarBangun = {
-                new Lingkaran(7),
-                new Persegi(5),
-                new Lingkaran(10),
-                new Persegi(4)
+                new Lingkaran("Lingkaran A", 7),
+                new Persegi("Persegi A", 6),
+                new PersegiPanjang("Persegi Panjang A", 8, 5),
+                new Lingkaran("Lingkaran B", 10),
+                new PersegiPanjang("Persegi Panjang B", 12, 4)
         };
 
-       double totalLuas = 0;
+        double totalLuas = 0;
+        BangunDatar bangunTerbesar = daftarBangun[0];
 
-       for (BangunDatar bd : daftarBangun) {
-           double luas = bd.hitungLuas();
-           System.out.println("Luas bangun: " + luas );
-           totalLuas += luas;
-       }
+        for (BangunDatar bd : daftarBangun) {
+            bd.tampilkanInfo(); // Memanggil method dari superclass
 
-       System.out.println("Total Luas Seluruh Bangun: " + totalLuas);
+            double luasSekarang = bd.hitungLuas();
+            totalLuas += luasSekarang;
+
+            if (luasSekarang > bangunTerbesar.hitungLuas()) {
+                bangunTerbesar = bd;
+            }
+        }
+
+        System.out.println("Total Luas Seluruh Bangun : " + totalLuas);
+        System.out.println("Bangun Luas Terbesar      : " + bangunTerbesar.namaBangun +
+                " (" + bangunTerbesar.hitungLuas() + ")");
     }
 }
